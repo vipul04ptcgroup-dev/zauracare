@@ -143,7 +143,7 @@ export default function CheckoutPage() {
                     </div>
                   ))}
                 </div>
-                <button type="submit" className="btn-primary w-full mt-2">Continue to Payment â†’</button>
+                <button type="submit" className="btn-primary w-full mt-2">Continue to Payment’</button>
               </form>
             )}
 
@@ -169,7 +169,7 @@ export default function CheckoutPage() {
                   This is a demo site. Checkout is disabled. For help contact +91 91208 79879 or ptcvirar@gmail.com.
                 </div>
                 <div className="flex gap-3 mt-4">
-                  <button onClick={() => setStep('address')} className="btn-secondary flex-1">â† Back</button>
+                  <button onClick={() => setStep('address')} className="btn-secondary flex-1">Back</button>
                   <button onClick={handlePlaceOrder} disabled={loading || checkoutDisabled} className="btn-primary flex-1 flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed">
                     {loading ? <span className="animate-spin w-4 h-4 border-2 border-white border-t-transparent rounded-full"/> : <Lock size={16} />}
                     {loading ? 'Processing...' : checkoutDisabled ? 'Checkout Disabled (Demo)' : `Pay â‚¹${finalTotal.toLocaleString()}`}
