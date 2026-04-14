@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { useAuthStore } from '@/context/auth';
-import { getUserOrders } from '@/services/api';
+import { getUserOrders, logoutUser } from '@/services/api';
 import type { Order } from '@/types';
 import Link from 'next/link';
 import { User, Package, MapPin, LogOut, ChevronRight, Clock, CheckCircle, Truck, XCircle } from 'lucide-react';
@@ -28,7 +28,8 @@ export default function ProfilePage() {
     if (user) getUserOrders(user.id).then(setOrders);
   }, [isAuthenticated, user, router]);
 
-  const handleLogout = () => {
+  const handleLogout = async () => {
+    await logoutUser();
     logout();
     toast.success('Logged out successfully');
     router.push('/');

@@ -2,14 +2,6 @@
 @import "tailwindcss";
 
 :root {
-  --bg: #f8faf9;
-  --surface: #ffffff;
-  --border: #e8f0ea;
-  --text: #0f1e14;
-  --text-muted: #5a7060;
-}
-
-.dark {
   --bg: #0c1410;
   --surface: #131f17;
   --border: #1e3025;
@@ -91,10 +83,6 @@ h1, h2, h3, .font-display {
 }
 
 .hero-gradient {
-  background: linear-gradient(135deg, #f0faf3 0%, #e8f7f0 40%, #e0f2fe 100%);
-}
-
-.dark .hero-gradient {
   background: linear-gradient(135deg, #0c1a12 0%, #0d1f18 40%, #0c1a22 100%);
 }
 

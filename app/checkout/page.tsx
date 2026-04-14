@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 import { useState } from 'react';
 import { useCartStore } from '@/context/cart';
 import { useRouter } from 'next/navigation';
@@ -38,6 +38,7 @@ export default function CheckoutPage() {
   const [step, setStep] = useState<'address' | 'payment' | 'success'>('address');
   const [loading, setLoading] = useState(false);
   const [orderId, setOrderId] = useState('');
+  const checkoutDisabled = true;
 
   const { register, handleSubmit, formState: { errors } } = useForm<FormData>({
     resolver: zodResolver(schema),
@@ -61,7 +62,7 @@ export default function CheckoutPage() {
       items,
       total: finalTotal,
       status: 'confirmed',
-      shippingAddress: { street: '—', city: '—', state: '—', pincode: '—', country: 'India' },
+      shippingAddress: { street: 'â€”', city: 'â€”', state: 'â€”', pincode: 'â€”', country: 'India' },
       paymentMethod,
       paymentStatus: 'paid',
     });
@@ -107,7 +108,7 @@ export default function CheckoutPage() {
               <div key={s} className="flex items-center gap-2">
                 <div className={`w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold ${step === s || (s === 'address' && step === 'payment') ? 'bg-green-600 text-white' : 'bg-gray-100 dark:bg-gray-800 text-gray-400'}`}>{i+1}</div>
                 <span className={`text-sm capitalize ${step === s ? 'text-gray-900 dark:text-white font-medium' : 'text-gray-400'}`}>{s}</span>
-                {i === 0 && <span className="text-gray-200 dark:text-gray-700 mx-1">→</span>}
+                {i === 0 && <span className="text-gray-200 dark:text-gray-700 mx-1">â†’</span>}
               </div>
             ))}
           </div>
@@ -121,8 +122,8 @@ export default function CheckoutPage() {
                 <h3 className="font-semibold text-gray-900 dark:text-white mb-2">Shipping Address</h3>
                 {[
                   { name: 'name', label: 'Full Name', placeholder: 'Priya Sharma' },
-                  { name: 'email', label: 'Email Address', placeholder: 'priya@email.com' },
-                  { name: 'phone', label: 'Phone Number', placeholder: '+91 98765 43210' },
+                  { name: 'email', label: 'Email Address', placeholder: 'ptcvirar@gmail.com' },
+                  { name: 'phone', label: 'Phone Number', placeholder: '+91 91208 79879' },
                   { name: 'street', label: 'Street Address', placeholder: '123 Wellness Street, Apt 4B' },
                 ].map(f => (
                   <div key={f.name}>
@@ -142,7 +143,7 @@ export default function CheckoutPage() {
                     </div>
                   ))}
                 </div>
-                <button type="submit" className="btn-primary w-full mt-2">Continue to Payment →</button>
+                <button type="submit" className="btn-primary w-full mt-2">Continue to Payment â†’</button>
               </form>
             )}
 
@@ -165,13 +166,13 @@ export default function CheckoutPage() {
                   ))}
                 </div>
                 <div className="bg-amber-50 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-800 rounded-xl p-4 text-sm text-amber-700 dark:text-amber-300">
-                  🔒 This is a demo. No real payment will be processed.
+                  This is a demo site. Checkout is disabled. For help contact +91 91208 79879 or ptcvirar@gmail.com.
                 </div>
                 <div className="flex gap-3 mt-4">
-                  <button onClick={() => setStep('address')} className="btn-secondary flex-1">← Back</button>
-                  <button onClick={handlePlaceOrder} disabled={loading} className="btn-primary flex-1 flex items-center justify-center gap-2">
+                  <button onClick={() => setStep('address')} className="btn-secondary flex-1">â† Back</button>
+                  <button onClick={handlePlaceOrder} disabled={loading || checkoutDisabled} className="btn-primary flex-1 flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed">
                     {loading ? <span className="animate-spin w-4 h-4 border-2 border-white border-t-transparent rounded-full"/> : <Lock size={16} />}
-                    {loading ? 'Processing...' : `Pay ₹${finalTotal.toLocaleString()}`}
+                    {loading ? 'Processing...' : checkoutDisabled ? 'Checkout Disabled (Demo)' : `Pay â‚¹${finalTotal.toLocaleString()}`}
                   </button>
                 </div>
               </div>
@@ -192,14 +193,14 @@ export default function CheckoutPage() {
                     <div className="flex-1 min-w-0">
                       <p className="text-xs font-medium text-gray-900 dark:text-white line-clamp-2">{item.product.name}</p>
                     </div>
-                    <p className="text-xs font-bold shrink-0">₹{(item.product.price * item.quantity).toLocaleString()}</p>
+                    <p className="text-xs font-bold shrink-0">â‚¹{(item.product.price * item.quantity).toLocaleString()}</p>
                   </div>
                 ))}
               </div>
               <div className="border-t border-gray-100 dark:border-gray-800 pt-4 space-y-2 text-sm">
-                <div className="flex justify-between text-gray-500"><span>Subtotal</span><span>₹{cartTotal.toLocaleString()}</span></div>
-                <div className="flex justify-between text-gray-500"><span>Shipping</span><span className={shipping===0?'text-green-600':''}>{shipping===0?'FREE':`₹${shipping}`}</span></div>
-                <div className="flex justify-between font-bold text-gray-900 dark:text-white text-base pt-2 border-t border-gray-100 dark:border-gray-800"><span>Total</span><span>₹{finalTotal.toLocaleString()}</span></div>
+                <div className="flex justify-between text-gray-500"><span>Subtotal</span><span>â‚¹{cartTotal.toLocaleString()}</span></div>
+                <div className="flex justify-between text-gray-500"><span>Shipping</span><span className={shipping===0?'text-green-600':''}>{shipping===0?'FREE':`â‚¹${shipping}`}</span></div>
+                <div className="flex justify-between font-bold text-gray-900 dark:text-white text-base pt-2 border-t border-gray-100 dark:border-gray-800"><span>Total</span><span>â‚¹{finalTotal.toLocaleString()}</span></div>
               </div>
             </div>
           </div>
@@ -208,3 +209,4 @@ export default function CheckoutPage() {
     </div>
   );
 }
+

@@ -2,8 +2,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { ShoppingCart, User, Sun, Moon, Menu, X, Search, ChevronDown } from 'lucide-react';
-// import { useTheme } from './ThemeProvider';
+import { ShoppingCart, User, Menu, X, Search } from 'lucide-react';
 import { useCartStore } from '@/context/cart';
 import { useAuthStore } from '@/context/auth';
 
@@ -15,7 +14,6 @@ const navLinks = [
 ];
 
 export default function Navbar() {
-  // const { theme, toggleTheme } = useTheme();
   const { itemCount, toggleCart } = useCartStore();
   const { isAuthenticated, user } = useAuthStore();
   const [scrolled, setScrolled] = useState(false);
@@ -52,11 +50,6 @@ export default function Navbar() {
           <Link href="/products" className="hidden sm:flex items-center justify-center w-9 h-9 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 transition-all">
             <Search size={18} />
           </Link>
-
-          {/* <button onClick={toggleTheme} className="flex items-center justify-center w-9 h-9 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 transition-all">
-            {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
-          </button> */}
-
           <Link href={isAuthenticated ? '/profile' : '/auth/login'}
             className="hidden sm:flex items-center justify-center w-9 h-9 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 transition-all">
             <User size={18} />

@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -44,7 +44,7 @@ export default function ForgotPasswordPage() {
                   <label className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5 block">Email Address</label>
                   <div className="relative">
                     <Mail size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
-                    <input {...register('email')} type="email" placeholder="you@example.com"
+                    <input {...register('email')} type="email" placeholder="ptcvirar@gmail.com"
                       className="w-full pl-9 pr-4 py-3 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-green-500" />
                   </div>
                   {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email.message}</p>}
@@ -64,3 +64,4 @@ export default function ForgotPasswordPage() {
     </div>
   );
 }
+

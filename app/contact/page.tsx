@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
@@ -38,8 +38,8 @@ export default function ContactPage() {
           {/* Info */}
           <div className="space-y-4">
             {[
-              { icon: Mail, title: 'Email Us', info: 'support@zauracare.com', sub: 'Response within 24 hours' },
-              { icon: Phone, title: 'Call Us', info: '+91 98765 43210', sub: 'Mon-Sat, 9am - 6pm IST' },
+              { icon: Mail, title: 'Email Us', info: 'ptcvirar@gmail.com', sub: 'Response within 24 hours' },
+              { icon: Phone, title: 'Call Us', info: '+91 91208 79879', sub: 'Mon-Sat, 9am - 6pm IST' },
               { icon: MapPin, title: 'Visit Us', info: 'Health House, MG Road', sub: 'Nashik, Maharashtra 422001' },
             ].map(c => (
               <div key={c.title} className="card p-5 flex items-start gap-4">
@@ -57,7 +57,7 @@ export default function ContactPage() {
               <div className="flex items-center gap-2 mb-3"><MessageSquare size={16} className="text-green-600"/><p className="font-semibold text-sm text-gray-900 dark:text-white">FAQ</p></div>
               <div className="space-y-2 text-sm text-gray-500">
                 {['What is your return policy?', 'How long does shipping take?', 'Are products FSSAI certified?'].map(q => (
-                  <p key={q} className="hover:text-green-600 cursor-pointer transition-colors">→ {q}</p>
+                  <p key={q} className="hover:text-green-600 cursor-pointer transition-colors">â†’ {q}</p>
                 ))}
               </div>
             </div>
@@ -80,7 +80,7 @@ export default function ContactPage() {
                   <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-6" style={{ fontFamily: 'Playfair Display, serif' }}>Send us a Message</h2>
                   <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
                     <div className="grid sm:grid-cols-2 gap-5">
-                      {[{name:'name',label:'Full Name',placeholder:'Priya Sharma'},{name:'email',label:'Email',placeholder:'you@example.com',type:'email'}].map(f=>(
+                      {[{name:'name',label:'Full Name',placeholder:'Priya Sharma'},{name:'email',label:'Email',placeholder:'ptcvirar@gmail.com',type:'email'}].map(f=>(
                         <div key={f.name}>
                           <label className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5 block">{f.label}</label>
                           <input {...register(f.name as keyof FormData)} type={f.type||'text'} placeholder={f.placeholder}
@@ -115,3 +115,4 @@ export default function ContactPage() {
     </div>
   );
 }
+

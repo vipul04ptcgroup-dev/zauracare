@@ -45,7 +45,7 @@ export default function HomePage() {
             <div className="relative hidden lg:block">
               <div className="relative w-full aspect-square max-w-lg mx-auto">
                 <div className="absolute inset-0 bg-gradient-to-br from-green-200/50 to-blue-200/50 dark:from-green-900/30 dark:to-blue-900/30 rounded-3xl"/>
-                <Image src="https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=800&q=80" alt="Wellness" fill className="object-cover rounded-3xl"/>
+                <Image src="/Dummy.png" alt="Wellness" fill className="object-cover rounded-3xl"/>
                 <div className="absolute -bottom-6 -left-6 bg-white dark:bg-gray-900 rounded-2xl p-4 shadow-xl border border-gray-100 dark:border-gray-800">
                   <div className="flex items-center gap-3">
                     <div className="w-10 h-10 bg-green-100 dark:bg-green-900 rounded-xl flex items-center justify-center"><Heart size={18} className="text-green-600"/></div>

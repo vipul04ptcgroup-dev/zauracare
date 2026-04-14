@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { LayoutDashboard, Package, ShoppingBag, Users, LogOut, Menu, X, ChevronRight } from 'lucide-react';
 import { useAuthStore } from '@/context/auth';
+import { logoutUser } from '@/services/api';
 import toast from 'react-hot-toast';
 
 const navItems = [
@@ -28,7 +29,8 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
 
   if (!isAuthenticated || user?.role !== 'admin') return null;
 
-  const handleLogout = () => {
+  const handleLogout = async () => {
+    await logoutUser();
     logout();
     toast.success('Logged out');
     router.push('/');

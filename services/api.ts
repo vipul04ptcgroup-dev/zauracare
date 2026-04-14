@@ -85,11 +85,30 @@ export async function getCategoryById(id: string): Promise<Category | null> {
 
 // Auth
 export async function loginUser(email: string, password: string): Promise<{ user: User; token: string } | null> {
-  await delay(500);
-  const user = mockUsers.find(u => u.email === email);
-  if (!user) return null;
-  // Mock auth - any password works in demo
-  return { user, token: 'mock-jwt-token-' + user.id };
+  await delay(150);
+  try {
+    const response = await fetch('/api/auth/login', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email, password }),
+    });
+
+    if (!response.ok) {
+      return null;
+    }
+
+    return (await response.json()) as { user: User; token: string };
+  } catch {
+    return null;
+  }
+}
+
+export async function logoutUser(): Promise<void> {
+  try {
+    await fetch('/api/auth/logout', { method: 'POST' });
+  } catch {
+    // noop: local state logout should still proceed.
+  }
 }
 
 export async function registerUser(data: { name: string; email: string; password: string }): Promise<{ user: User; token: string }> {

@@ -21,7 +21,7 @@ export default function AboutPage() {
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div className="relative">
             <div className="aspect-square rounded-3xl overflow-hidden">
-              <Image src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&q=80" alt="Our team" fill className="object-cover" />
+              <Image src="/Dummy.png" alt="Our team" fill className="object-cover" />
             </div>
             <div className="absolute -bottom-6 -right-6 bg-green-600 text-white p-6 rounded-2xl shadow-2xl">
               <p className="text-4xl font-bold">5+</p>

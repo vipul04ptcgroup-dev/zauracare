@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -50,7 +50,7 @@ export default function RegisterPage() {
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
             {[
               { name: 'name', label: 'Full Name', type: 'text', placeholder: 'Priya Sharma' },
-              { name: 'email', label: 'Email Address', type: 'email', placeholder: 'you@example.com' },
+              { name: 'email', label: 'Email Address', type: 'email', placeholder: 'ptcvirar@gmail.com' },
             ].map(f => (
               <div key={f.name}>
                 <label className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5 block">{f.label}</label>
@@ -66,7 +66,7 @@ export default function RegisterPage() {
               <div key={f.name}>
                 <label className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5 block">{f.label}</label>
                 <div className="relative">
-                  <input {...register(f.name as keyof FormData)} type={showPass ? 'text' : 'password'} placeholder="••••••••"
+                  <input {...register(f.name as keyof FormData)} type={showPass ? 'text' : 'password'} placeholder="â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢"
                     className="w-full px-4 py-3 pr-11 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-green-500" />
                   <button type="button" onClick={() => setShowPass(!showPass)} className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400">
                     {showPass ? <EyeOff size={16} /> : <Eye size={16} />}
@@ -90,3 +90,4 @@ export default function RegisterPage() {
     </div>
   );
 }
+

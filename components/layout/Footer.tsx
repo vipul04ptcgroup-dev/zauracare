@@ -1,4 +1,4 @@
-import Link from 'next/link';
+﻿import Link from 'next/link';
 import Image from 'next/image';
 import { Share2, Users, MessageCircle, PlayCircle, Mail, Phone, MapPin } from 'lucide-react';
 
@@ -53,22 +53,22 @@ export default function Footer() {
           <div>
             <h4 className="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Contact Us</h4>
             <ul className="space-y-3 text-sm">
-              {/* <li className="flex gap-3"><Mail size={16} className="mt-0.5 text-green-500 shrink-0" /><span>support@zauracare.com</span></li>
-              <li className="flex gap-3"><Phone size={16} className="mt-0.5 text-green-500 shrink-0" /><span>+91 98765 43210</span></li> */}
+              <li className="flex gap-3"><Mail size={16} className="mt-0.5 text-green-500 shrink-0" /><span>ptcvirar@gmail.com</span></li>
+              <li className="flex gap-3"><Phone size={16} className="mt-0.5 text-green-500 shrink-0" /><span>+91 91208 79879</span></li>
               <li className="flex gap-3"><MapPin size={16} className="mt-0.5 text-green-500 shrink-0" /><span>201-202, Hirubhai Residency, Besides Vedant Hospital, Near Virar East-West Flyover, Virar West - 401303</span></li>
             </ul>
             <div className="mt-6 p-4 bg-gray-900 rounded-xl">
               <p className="text-xs text-gray-500 mb-2">Subscribe for wellness tips</p>
               <div className="flex gap-2">
                 <input placeholder="Your email" className="flex-1 bg-gray-800 text-white text-sm px-3 py-2 rounded-lg outline-none focus:ring-1 focus:ring-green-500" />
-                <button className="px-3 py-2 bg-green-600 hover:bg-green-700 text-white text-sm rounded-lg transition-colors">→</button>
+                <button className="px-3 py-2 bg-green-600 hover:bg-green-700 text-white text-sm rounded-lg transition-colors">â†’</button>
               </div>
             </div>
           </div>
         </div>
 
         <div className="border-t border-gray-800 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-sm text-gray-600">© 2024 Zauracare | Powered by PTCGRAM Private Limited. </p>
+          <p className="text-sm text-gray-600">Â© 2024 Zauracare | Powered by PTCGRAM Private Limited. </p>
           <div className="flex gap-4 text-xs text-gray-600">
             <Link href="/legal/privacy" className="hover:text-gray-400">Privacy</Link>
             <Link href="/legal/terms" className="hover:text-gray-400">Terms</Link>
@@ -78,3 +78,4 @@ export default function Footer() {
     </footer>
   );
 }
+

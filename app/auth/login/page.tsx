@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -35,7 +35,7 @@ export default function LoginPage() {
       toast.success(`Welcome back, ${result.user.name}!`);
       router.push(result.user.role === 'admin' ? '/admin/dashboard' : '/profile');
     } else {
-      toast.error('Invalid credentials. Try admin@zauracare.com');
+      toast.error('Invalid credentials');
     }
     setLoading(false);
   };
@@ -53,7 +53,7 @@ export default function LoginPage() {
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
             <div>
               <label className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5 block">Email Address</label>
-              <input {...register('email')} type="email" placeholder="you@example.com"
+              <input {...register('email')} type="email" placeholder="ptcvirar@gmail.com"
                 className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-green-500" />
               {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email.message}</p>}
             </div>
@@ -77,11 +77,11 @@ export default function LoginPage() {
             </button>
           </form>
 
-          <div className="mt-6 p-4 bg-blue-50 dark:bg-blue-950/30 rounded-xl text-xs text-blue-700 dark:text-blue-300">
+          {/* <div className="mt-6 p-4 bg-blue-50 dark:bg-blue-950/30 rounded-xl text-xs text-blue-700 dark:text-blue-300">
             <p className="font-semibold mb-1">Demo Credentials:</p>
-            <p>Admin: admin@zauracare.com (any password)</p>
-            <p>User: priya@example.com (any password)</p>
-          </div>
+            <p>Admin: ptcvirar@gmail.com (set `ADMIN_PASSWORD` in env)</p>
+            <p>Demo User: ptcvirar@gmail.com (`DEMO_USER_PASSWORD` or default `User@123`)</p>
+          </div> */}
 
           <p className="text-center text-sm text-gray-500 mt-6">
             Don't have an account?{' '}
@@ -92,3 +92,4 @@ export default function LoginPage() {
     </div>
   );
 }
+
