@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600&display=swap');
+@import "tailwindcss";
+
+:root {
+  --bg: #f8faf9;
+  --surface: #ffffff;
+  --border: #e8f0ea;
+  --text: #0f1e14;
+  --text-muted: #5a7060;
+}
+
+.dark {
+  --bg: #0c1410;
+  --surface: #131f17;
+  --border: #1e3025;
+  --text: #e8f0ea;
+  --text-muted: #7a9e84;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  transition: background-color 0.3s, color 0.3s;
+  box-sizing: border-box;
+}
+
+h1, h2, h3, .font-display {
+  font-family: 'Playfair Display', serif;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #16a34a;
+  color: #ffffff;
+  font-weight: 500;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.75rem;
+  transition: all 0.2s;
+  cursor: pointer;
+  border: none;
+  text-decoration: none;
+}
+.btn-primary:hover {
+  background-color: #15803d;
+  box-shadow: 0 4px 16px rgba(22,163,74,0.3);
+  transform: translateY(-1px);
+}
+.btn-primary:active { transform: translateY(0); }
+.btn-primary:disabled {
+  background-color: #86efac;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #16a34a;
+  color: #16a34a;
+  font-weight: 500;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.75rem;
+  transition: all 0.2s;
+  cursor: pointer;
+  background: transparent;
+  text-decoration: none;
+}
+.btn-secondary:hover {
+  background-color: #16a34a;
+  color: #ffffff;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+}
+
+.section {
+  padding: 4rem 1rem;
+  max-width: 80rem;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .section { padding: 6rem 1rem; }
+}
+
+.hero-gradient {
+  background: linear-gradient(135deg, #f0faf3 0%, #e8f7f0 40%, #e0f2fe 100%);
+}
+
+.dark .hero-gradient {
+  background: linear-gradient(135deg, #0c1a12 0%, #0d1f18 40%, #0c1a22 100%);
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, #16a34a, #0ea5e9);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: #ccc; border-radius: 3px; }
