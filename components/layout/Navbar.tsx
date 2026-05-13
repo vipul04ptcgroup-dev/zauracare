@@ -1,9 +1,8 @@
 'use client';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { ShoppingCart, User, Menu, X, Search } from 'lucide-react';
-import { useCartStore } from '@/context/cart';
+import { User, Menu, X, Search, Megaphone } from 'lucide-react';
 import { useAuthStore } from '@/context/auth';
 
 const navLinks = [
@@ -14,21 +13,18 @@ const navLinks = [
 ];
 
 export default function Navbar() {
-  const { itemCount, toggleCart } = useCartStore();
-  const { isAuthenticated, user } = useAuthStore();
-  const [scrolled, setScrolled] = useState(false);
+  const { isAuthenticated } = useAuthStore();
   const [mobileOpen, setMobileOpen] = useState(false);
-  const count = itemCount();
-
-  useEffect(() => {
-    const handler = () => setScrolled(window.scrollY > 20);
-    window.addEventListener('scroll', handler);
-    return () => window.removeEventListener('scroll', handler);
-  }, []);
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white/95 dark:bg-gray-950 backdrop-blur-md shadow-sm border-b border-gray-100 dark:border-gray-800">
-      
+      <div className="bg-green-600 text-white text-xs sm:text-sm">
+        <div className="max-w-7xl mx-auto px-4 py-2 flex items-center justify-center gap-2 text-center">
+          <Megaphone size={14} />
+          <span>We will start selling products soon. For now, please send us an enquiry.</span>
+        </div>
+      </div>
+
       <div className="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
@@ -55,14 +51,9 @@ export default function Navbar() {
             <User size={18} />
           </Link>
 
-          <button onClick={toggleCart} className="relative flex items-center justify-center w-9 h-9 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 transition-all">
-            <ShoppingCart size={18} />
-            {count > 0 && (
-              <span className="absolute -top-1 -right-1 min-w-[18px] h-[18px] bg-green-600 text-white text-[10px] font-bold rounded-full flex items-center justify-center px-1">
-                {count}
-              </span>
-            )}
-          </button>
+          <Link href="/contact" className="hidden sm:inline-flex items-center justify-center rounded-lg bg-green-600 px-3 py-2 text-xs font-semibold text-white hover:bg-green-700 transition-all">
+            Enquiry
+          </Link>
 
           <button onClick={() => setMobileOpen(!mobileOpen)} className="md:hidden flex items-center justify-center w-9 h-9 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 transition-all">
             {mobileOpen ? <X size={18} /> : <Menu size={18} />}
@@ -82,6 +73,10 @@ export default function Navbar() {
           <Link href={isAuthenticated ? '/profile' : '/auth/login'} onClick={() => setMobileOpen(false)}
             className="block px-4 py-3 text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-green-600 hover:bg-green-50 dark:hover:bg-green-950/30 rounded-lg transition-all">
             {isAuthenticated ? 'My Account' : 'Login / Register'}
+          </Link>
+          <Link href="/contact" onClick={() => setMobileOpen(false)}
+            className="block px-4 py-3 text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-green-600 hover:bg-green-50 dark:hover:bg-green-950/30 rounded-lg transition-all">
+            Enquiry
           </Link>
         </div>
       )}

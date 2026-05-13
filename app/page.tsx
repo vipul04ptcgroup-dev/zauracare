@@ -20,19 +20,19 @@ export default function HomePage() {
   return (
     <div className="overflow-x-hidden">
       <section className="hero-gradient min-h-screen flex items-center pt-16">
-        <div className="max-w-7xl mx-auto px-4 w-full py-20">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 w-full py-12 sm:py-16 lg:py-20">
+          <div className="grid lg:grid-cols-2 gap-8 md:gap-10 lg:gap-12 items-center">
             <div>
-              <div className="inline-flex items-center gap-2 bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-300 text-sm font-medium px-4 py-2 rounded-full mb-6">
+              <div className="inline-flex items-center gap-2 bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-300 text-xs sm:text-sm font-medium px-3 sm:px-4 py-2 rounded-full mb-4 sm:mb-6">
                 <Leaf size={14} /> Science-backed wellness since 2025
               </div>
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6 text-gray-900 dark:text-white" style={{fontFamily:'Playfair Display,serif'}}>
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold leading-tight mb-4 sm:mb-6 text-gray-900 dark:text-white" style={{fontFamily:'Playfair Display,serif'}}>
                 Health with <span className="text-gradient">Empathy</span> & <span className="text-gradient">Expertise</span>
               </h1>
-              <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed mb-8 max-w-lg">
+              <p className="text-base sm:text-lg text-gray-600 dark:text-gray-400 leading-relaxed mb-6 sm:mb-8 max-w-lg">
                 Premium healthcare supplements crafted with clinical precision and deep care for your wellbeing. Every product tested, trusted, and transparent.
               </p>
-              <div className="flex flex-wrap gap-4 mb-10">
+              <div className="flex flex-col sm:flex-row sm:flex-wrap gap-3 sm:gap-4 mb-8 sm:mb-10">
                 <Link href="/products" className="btn-primary flex items-center gap-2">Shop Now <ArrowRight size={16} /></Link>
                 <Link href="/about" className="btn-secondary flex items-center gap-2">Our Story <ChevronRight size={16} /></Link>
               </div>
@@ -42,17 +42,17 @@ export default function HomePage() {
                 ))}
               </div> */}
             </div>
-            <div className="relative hidden lg:block">
-              <div className="relative w-full aspect-square max-w-lg mx-auto">
+            <div className="relative">
+              <div className="relative w-full aspect-square max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg mx-auto">
                 <div className="absolute inset-0 bg-gradient-to-br from-green-200/50 to-blue-200/50 dark:from-green-900/30 dark:to-blue-900/30 rounded-3xl"/>
                 <Image src="/Dummy.png" alt="Wellness" fill className="object-cover rounded-3xl"/>
-                <div className="absolute -bottom-6 -left-6 bg-white dark:bg-gray-900 rounded-2xl p-4 shadow-xl border border-gray-100 dark:border-gray-800">
+                <div className="absolute -bottom-2 sm:-bottom-4 lg:-bottom-6 -left-2 sm:-left-4 lg:-left-6 bg-white dark:bg-gray-900 rounded-2xl p-3 sm:p-4 shadow-xl border border-gray-100 dark:border-gray-800">
                   <div className="flex items-center gap-3">
                     <div className="w-10 h-10 bg-green-100 dark:bg-green-900 rounded-xl flex items-center justify-center"><Heart size={18} className="text-green-600"/></div>
                     <div><p className="text-xs text-gray-500">Trusted by</p><p className="font-bold text-gray-900 dark:text-white">50,000+ users</p></div>
                   </div>
                 </div>
-                <div className="absolute -top-6 -right-6 bg-white dark:bg-gray-900 rounded-2xl p-4 shadow-xl border border-gray-100 dark:border-gray-800">
+                <div className="absolute -top-2 sm:-top-4 lg:-top-6 -right-2 sm:-right-4 lg:-right-6 bg-white dark:bg-gray-900 rounded-2xl p-3 sm:p-4 shadow-xl border border-gray-100 dark:border-gray-800">
                   <div className="flex items-center gap-3">
                     <div className="w-10 h-10 bg-amber-100 dark:bg-amber-900 rounded-xl flex items-center justify-center"><Star size={18} className="text-amber-500 fill-amber-500"/></div>
                     <div><p className="text-xs text-gray-500">Average rating</p><p className="font-bold text-gray-900 dark:text-white">4.8 / 5.0</p></div>
@@ -92,7 +92,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section bg-gray-50 dark:bg-gray-900/30 rounded-3xl mx-4">
+      <section className="section bg-gray-50 dark:bg-gray-900/30 rounded-2xl sm:rounded-3xl mx-4 sm:mx-6">
         <div className="flex items-end justify-between mb-10">
           <div><p className="text-green-600 text-sm font-medium mb-2">Hand-picked for you</p><h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white" style={{fontFamily:'Playfair Display,serif'}}>Featured Products</h2></div>
           <Link href="/products" className="hidden sm:flex items-center gap-1 text-green-600 text-sm font-medium">View all <ArrowRight size={14}/></Link>
@@ -125,7 +125,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section bg-gray-50 dark:bg-gray-900/30 rounded-3xl mx-4">
+      <section className="section bg-gray-50 dark:bg-gray-900/30 rounded-2xl sm:rounded-3xl mx-4 sm:mx-6">
         <div className="text-center mb-12">
           <p className="text-green-600 text-sm font-medium mb-2">What our community says</p>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white" style={{fontFamily:'Playfair Display,serif'}}>Real Results, Real People</h2>
@@ -144,8 +144,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="max-w-7xl mx-auto px-4 py-16">
-        <div className="bg-gradient-to-br from-green-600 to-green-800 rounded-3xl p-10 md:p-16 text-center text-white relative overflow-hidden">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-16">
+        <div className="bg-gradient-to-br from-green-600 to-green-800 rounded-2xl sm:rounded-3xl p-6 sm:p-10 md:p-16 text-center text-white relative overflow-hidden">
           <div className="absolute inset-0 opacity-10"><div className="absolute top-0 right-0 w-96 h-96 bg-white rounded-full translate-x-1/2 -translate-y-1/2"/><div className="absolute bottom-0 left-0 w-96 h-96 bg-white rounded-full -translate-x-1/2 translate-y-1/2"/></div>
           <div className="relative">
             <h2 className="text-3xl md:text-5xl font-bold mb-4" style={{fontFamily:'Playfair Display,serif'}}>Start Your Wellness Journey</h2>

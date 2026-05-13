@@ -40,7 +40,7 @@ export default function ContactPage() {
             {[
               { icon: Mail, title: 'Email Us', info: 'ptcvirar@gmail.com', sub: 'Response within 24 hours' },
               { icon: Phone, title: 'Call Us', info: '+91 91208 79879', sub: 'Mon-Sat, 9am - 6pm IST' },
-              { icon: MapPin, title: 'Visit Us', info: 'Health House, MG Road', sub: 'Nashik, Maharashtra 422001' },
+              { icon: MapPin, title: 'Visit Us', info: 'Hirubai Residency Virar (West)', sub: 'Mumbai, Maharashtra 401303' },
             ].map(c => (
               <div key={c.title} className="card p-5 flex items-start gap-4">
                 <div className="w-10 h-10 bg-green-100 dark:bg-green-900/40 rounded-xl flex items-center justify-center shrink-0">
@@ -57,7 +57,7 @@ export default function ContactPage() {
               <div className="flex items-center gap-2 mb-3"><MessageSquare size={16} className="text-green-600"/><p className="font-semibold text-sm text-gray-900 dark:text-white">FAQ</p></div>
               <div className="space-y-2 text-sm text-gray-500">
                 {['What is your return policy?', 'How long does shipping take?', 'Are products FSSAI certified?'].map(q => (
-                  <p key={q} className="hover:text-green-600 cursor-pointer transition-colors">â†’ {q}</p>
+                  <p key={q} className="hover:text-green-600 cursor-pointer transition-colors">➤ {q}</p>
                 ))}
               </div>
             </div>

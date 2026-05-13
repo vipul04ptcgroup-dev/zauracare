@@ -61,7 +61,7 @@ export default function Footer() {
               <p className="text-xs text-gray-500 mb-2">Subscribe for wellness tips</p>
               <div className="flex gap-2">
                 <input placeholder="Your email" className="flex-1 bg-gray-800 text-white text-sm px-3 py-2 rounded-lg outline-none focus:ring-1 focus:ring-green-500" />
-                <button className="px-3 py-2 bg-green-600 hover:bg-green-700 text-white text-sm rounded-lg transition-colors">â†’</button>
+                <button className="px-3 py-2 bg-green-600 hover:bg-green-700 text-white text-sm rounded-lg transition-colors">➤</button>
               </div>
             </div>
           </div>

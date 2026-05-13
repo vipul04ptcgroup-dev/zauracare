@@ -108,7 +108,7 @@ export default function CheckoutPage() {
               <div key={s} className="flex items-center gap-2">
                 <div className={`w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold ${step === s || (s === 'address' && step === 'payment') ? 'bg-green-600 text-white' : 'bg-gray-100 dark:bg-gray-800 text-gray-400'}`}>{i+1}</div>
                 <span className={`text-sm capitalize ${step === s ? 'text-gray-900 dark:text-white font-medium' : 'text-gray-400'}`}>{s}</span>
-                {i === 0 && <span className="text-gray-200 dark:text-gray-700 mx-1">â†’</span>}
+                {i === 0 && <span className="text-gray-200 dark:text-gray-700 mx-1">➤</span>}
               </div>
             ))}
           </div>

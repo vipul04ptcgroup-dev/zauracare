@@ -1,24 +1,18 @@
 'use client';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Star, ShoppingCart, Heart, Zap } from 'lucide-react';
+import { Star, MessageCircle, Heart } from 'lucide-react';
 import { useState } from 'react';
-import { useCartStore } from '@/context/cart';
+import { useRouter } from 'next/navigation';
 import type { Product } from '@/types';
-import toast from 'react-hot-toast';
 
 export default function ProductCard({ product }: { product: Product }) {
-  const { addItem } = useCartStore();
+  const router = useRouter();
   const [wished, setWished] = useState(false);
-  const [adding, setAdding] = useState(false);
-
-  const handleAddToCart = async (e: React.MouseEvent) => {
+  
+  const handleEnquiry = (e: React.MouseEvent) => {
     e.preventDefault();
-    setAdding(true);
-    await new Promise(r => setTimeout(r, 300));
-    addItem(product);
-    toast.success(`${product.name} added to cart`);
-    setAdding(false);
+    router.push('/contact');
   };
 
   return (
@@ -73,12 +67,11 @@ export default function ProductCard({ product }: { product: Product }) {
             )}
           </div>
           <button
-            onClick={handleAddToCart}
-            disabled={adding}
+            onClick={handleEnquiry}
             className="flex items-center gap-1.5 bg-green-600 hover:bg-green-700 disabled:bg-green-400 text-white text-xs font-medium px-3 py-2 rounded-lg transition-colors"
           >
-            {adding ? <Zap size={13} className="animate-pulse" /> : <ShoppingCart size={13} />}
-            {adding ? 'Adding...' : 'Add'}
+            <MessageCircle size={13} />
+            Enquiry
           </button>
         </div>
       </div>
